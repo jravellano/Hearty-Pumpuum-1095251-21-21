@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Hearty💛 | For the Woman I Love</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Work+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#735c00",
+                        "error-container": "#ffdad6",
+                        "on-background": "#1f1b15",
+                        "background": "#fff8f3",
+                        "on-tertiary-fixed-variant": "#484828",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#221b00",
+                        "tertiary-container": "#b6b58c",
+                        "on-primary": "#ffffff",
+                        "outline": "#7f7663",
+                        "surface-bright": "#fff8f3",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-tertiary-fixed": "#1d1d03",
+                        "inverse-surface": "#343029",
+                        "tertiary-fixed": "#e6e5b9",
+                        "on-surface": "#1f1b15",
+                        "on-surface-variant": "#4d4635",
+                        "tertiary-fixed-dim": "#cac99f",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#735c00",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#eae1d7",
+                        "surface": "#fff8f3",
+                        "inverse-primary": "#e9c349",
+                        "secondary-container": "#f8df75",
+                        "on-primary-container": "#554300",
+                        "surface-dim": "#e1d9cf",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#dec65f",
+                        "inverse-on-surface": "#f8efe5",
+                        "surface-variant": "#eae1d7",
+                        "secondary": "#6e5d00",
+                        "surface-container-low": "#fbf2e8",
+                        "on-secondary-container": "#736200",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#60603e",
+                        "secondary-fixed": "#fbe278",
+                        "on-tertiary-container": "#474727",
+                        "on-primary-fixed-variant": "#574500",
+                        "surface-container-high": "#f0e7dd",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#d0c5af",
+                        "primary-fixed": "#ffe088",
+                        "primary-container": "#d4af37",
+                        "surface-container": "#f6ece3",
+                        "on-secondary-fixed-variant": "#534600",
+                        "on-primary-fixed": "#241a00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "memory": "24px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "container-max": "1100px",
+                        "base": "8px",
+                        "xl": "80px",
+                        "lg": "48px",
+                        "xs": "4px",
+                        "gutter": "24px",
+                        "sm": "12px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["EB Garamond"],
+                        "label-md": ["Work Sans"],
+                        "headline-md": ["EB Garamond"],
+                        "headline-sm": ["EB Garamond"],
+                        "body-lg": ["EB Garamond"],
+                        "display-lg": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "body-md": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "body-lg": ["20px", { "lineHeight": "30px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .polaroid-rotate-left {
+            transform: rotate(-1.5deg);
+        }
+
+        .polaroid-rotate-right {
+            transform: rotate(1.2deg);
+        }
+
+        .fade-in-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+
+        .fade-in-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.6;
+            }
+
+            90% {
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: translateY(-120vh) rotate(45deg);
+                opacity: 0;
+            }
+        }
+
+        .particle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 0;
+            animation: float linear infinite;
+        }
+
+        .notebook-line {
+            background-image: linear-gradient(to bottom, transparent 95%, #f6ece3 95%);
+            background-size: 100% 2.5rem;
+            line-height: 2.5rem;
+        }
+
+        .floating-flower-accent {
+            animation: soft-float 6s ease-in-out infinite;
+        }
+
+        @keyframes soft-float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(5deg);
+            }
+        }
+
+        /* Mobile specific adjustments */
+        @media (max-width: 768px) {
+            .display-lg-mobile {
+                font-size: 32px;
+                line-height: 40px;
+            }
+
+            .timeline-line {
+                left: 24px !important;
+                transform: none !important;
+            }
+
+            .timeline-dot {
+                left: 24px !important;
+                transform: translateX(-50%) !important;
+            }
+
+            .timeline-content {
+                margin-left: 56px !important;
+                width: calc(100% - 70px) !important;
+            }
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed overflow-x-hidden">
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0" id="particle-container"></div>
+    <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm border-b border-outline-variant/30">
+        <div class="flex justify-between items-center px-gutter max-w-container-max mx-auto h-16">
+            <span class="font-headline-md text-headline-md text-primary">Hearty Pumpum</span>
+            <div class="hidden md:flex gap-lg items-center">
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md text-label-md"
+                    href="#letter">The Letter</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md text-label-md"
+                    href="#memories">Our Memories</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md text-label-md"
+                    href="#timeline">Our Path</a>
+            </div>
+            <div class="flex items-center gap-md">
+                <button class="active:scale-95 transition-transform"><span
+                        class="material-symbols-outlined text-primary"
+                        style="font-variation-settings: 'FILL' 1;">favorite</span></button>
+                <button class="active:scale-95 transition-transform"><span
+                        class="material-symbols-outlined text-primary">account_circle</span></button>
+            </div>
+        </div>
+    </nav>
+    <main class="relative z-10 pt-16">
+        <!-- Hero Section -->
+        <section
+            class="relative min-h-[70vh] md:min-h-[85vh] flex flex-col items-center justify-center text-center px-gutter overflow-hidden">
+            <div
+                class="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary-fixed/40 via-transparent to-transparent">
+            </div>
+            <!-- Hero Accents (Responsive Visibility) -->
+            <div
+                class="absolute top-1/4 left-4 md:left-10 w-16 md:w-24 opacity-40 md:opacity-90 floating-flower-accent">
+                <img alt="Yellow Gerbera" class="w-full h-auto" src="/images/sunflower-svgrepo-com.svg" />
+            </div>
+            <div class="absolute bottom-1/4 right-4 md:right-10 w-12 md:w-16 opacity-60 md:opacity-90 floating-flower-accent"
+                style="animation-delay: -2s;">
+                <img alt="Forget-me-not" class="w-full h-auto"
+                    src="/images/bouquet.png" />
+            </div>
+            <div class="fade-in-on-scroll relative z-10 px-4">
+                <h1 class="font-display-lg text-4xl md:text-display-lg mb-md text-on-surface max-w-3xl mx-auto">
+                    For the Woman I Love 💛<br>
+                    Master Siopao 🐹
+                </h1>
+                <p class="font-body-lg text-lg md:text-body-lg text-secondary mb-lg max-w-xl mx-auto">
+                    A golden archive of our shared moments, laughter, and the beautiful journey we continue to walk hand
+                    in hand.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-sm md:gap-md justify-center items-center">
+                    <a class="w-full sm:w-auto bg-primary-container text-on-primary-container px-lg py-sm rounded-full font-label-md text-label-md hover:shadow-lg transition-all active:scale-95 flex justify-center items-center gap-base"
+                        href="#letter">Read My Letter <span
+                            class="material-symbols-outlined text-sm">auto_stories</span></a>
+                    <a class="w-full sm:w-auto border border-primary text-primary px-lg py-sm rounded-full font-label-md text-label-md hover:bg-secondary-container/30 transition-all active:scale-95 flex justify-center items-center"
+                        href="#memories">View Memories</a>
+                </div>
+            </div>
+        </section>
+        <!-- Letter Section -->
+        <section class="max-w-container-max mx-auto py-lg md:py-xl px-gutter" id="letter">
+            <div
+                class="fade-in-on-scroll bg-surface-container-lowest p-md md:p-xl rounded-memory shadow-[0_20px_50px_rgba(212,175,55,0.15)] border border-surface-container relative">
+                <div
+                    class="absolute -top-6 -left-6 md:-top-10 md:-left-10 w-20 md:w-28 opacity-100 pointer-events-none floating-flower-accent">
+                    <img alt="Gerbera Accent" class="w-full h-auto"
+                        src="/images/gerbera (1).png" />
+                </div>
+                <span
+                    class="absolute top-md right-md material-symbols-outlined text-primary-fixed-dim text-2xl md:text-4xl opacity-50">auto_awesome</span>
+                <h2 class="font-headline-md text-headline-md text-primary mb-md">Forever Archives</h2>
+                <div class="font-body-lg text-lg md:text-body-lg text-on-surface-variant space-y-md notebook-line">
+                    <p>Last December 2025, meeting you here in Atimonan felt so unreal. Hanggang ngayon, hindi ko pa rin
+                        ma-imagine na magiging ganito tayo ka-close. At first, there were times na nahihiya akong
+                        makipag-usap or mag-chat sayo, pero still, I kept trying to find reasons para makausap ka.
+                        Remember “Kuya Vicjun Mug right?” Hehehe.
+                    </p>
+                    <p> There were also times na na-ignore kita because of misunderstandings. I know I made you sad and
+                        made a lot of mistakes minsan actually, madalas pa nga, hehehe.
+                    </p>
+                    <p>But as time goes by, after all the tampuhan, iyakan, and unintentionally hurting each other,
+                        we’re still here. And somehow, our bond became stronger. I’m really happy, and I truly thank
+                        Jehovah for bringing you into my life. Tunay na masayang-masaya ako sa’yo. Kahit minsan mahirap
+                        at masakit dahil sa mga bagay-bagay, masaya pa rin ako sa’yo, mahal. Tunay ’yan.
+                    </p>
+                    <p>Thank you for showing me love in your own way, and I really appreciate it. Thank you rin for
+                        appreciating my love and believing that it’s genuine.
+
+                        I love you, mahal ko.
+
+                    </p>
+                </div>
+
+
+                <div class="mt-lg pt-md border-t border-outline-variant">
+                    <p class="font-headline-sm text-headline-sm italic text-secondary">With all my love,</p>
+                    <p class="font-body-md text-body-md font-bold mt-xs">MAHAL🫂🥰😘</p>
+                </div>
+            </div>
+        </section>
+        <!-- Gallery Section -->
+        <section class="bg-surface-container-low py-lg md:py-xl overflow-visible relative" id="memories">
+            <!-- Gallery Floral Accents -->
+            <div
+                class="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/4 w-32 md:w-48 opacity-80 pointer-events-none floating-flower-accent z-0">
+                <img alt="Yellow Gumamela" class="w-full h-auto"
+                    src="/images/tulip.png" />
+            </div>
+            <div class="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 w-40 md:w-56 opacity-90 pointer-events-none floating-flower-accent z-0"
+                style="animation-delay: -3s;">
+                <img alt="Pink Center Gumamela" class="w-full h-auto"
+                    src="/images/coffee-break.png" />
+            </div>
+            <div class="max-w-container-max mx-auto px-gutter relative z-10">
+                <div class="text-center mb-lg md:mb-xl fade-in-on-scroll">
+                    <h2 class="font-headline-md text-headline-md text-on-surface">16 Captured Fragments</h2>
+                    <p class="font-body-md text-body-md text-secondary mt-sm">Moments of gold we've frozen in time.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-lg">
+                    <!-- 16 Polaroids -->
+                    <div class="fade-in-on-scroll polaroid-rotate-left group">
+                        <div
+                            class="bg-white p-2 md:p-sm pb-6 md:pb-lg rounded shadow-md group-hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                            <div class="aspect-square overflow-hidden bg-surface-dim mb-sm">
+                                <img alt="Morning Light"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    src="/images/flower.jpg" />
+                            </div>
+                            <p
+                                class="font-label-md text-xs md:text-label-md italic text-center text-secondary truncate px-xs">
+                                Baypark Street</p>
+                        </div>
+                    </div>
+                    <div class="fade-in-on-scroll group">
+                        <div
+                            class="bg-white p-2 md:p-sm pb-6 md:pb-lg rounded shadow-md group-hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                            <div class="aspect-square overflow-hidden bg-surface-dim mb-sm">
+                                <img alt="Gumamela Sunsets"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    src="/images/Baypark.png" />
+                            </div>
+                            <p
+                                class="font-label-md text-xs md:text-label-md italic text-center text-secondary truncate px-xs">
+                                Baypark Cute cute</p>
+                        </div>
+                    </div>
+                    <div class="fade-in-on-scroll polaroid-rotate-right group">
+                        <div
+                            class="bg-white p-2 md:p-sm pb-6 md:pb-lg rounded shadow-md group-hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                            <div class="aspect-square overflow-hidden bg-surface-dim mb-sm">
+                                <img alt="Work &amp; Warmth"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    src="/images/kongregasyon.jpeg" />
+                            </div>
+                            <p
+                                class="font-label-md text-xs md:text-label-md italic text-center text-secondary truncate px-xs">
+                                Assembly Downstage</p>
+                        </div>
+                    </div>
+                    <div class="fade-in-on-scroll group">
+                        <div
+                            class="bg-white p-2 md:p-sm pb-6 md:pb-lg rounded shadow-md group-hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                            <div class="aspect-square overflow-hidden bg-surface-dim mb-sm">
+                                <img alt="Wildflower Whispers"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    src="/images/payong.jpg" />
+                            </div>
+                            <p
+                                class="font-label-md text-xs md:text-label-md italic text-center text-secondary truncate px-xs">
+                                Lock Screen Wallpaper</p>
+                        </div>
+                    </div>
+                    <div class="fade-in-on-scroll polaroid-rotate-left group">
+                        <div
+                            class="bg-white p-2 md:p-sm pb-6 md:pb-lg rounded shadow-md group-hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                            <div class="aspect-square overflow-hidden bg-surface-dim mb-sm">
+                                <img alt="Coffee &amp; Calm"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    src="/images/711tayo.jpeg" />
+                            </div>
+                            <p
+                                class="font-label-md text-xs md:text-label-md italic text-center text-secondary truncate px-xs">
+                                7/11 MAYLO 12</p>
+                        </div>
+                    </div>
+                    <div class="fade-in-on-scroll group">
+                        <div
+                            class="bg-white p-2 md:p-sm pb-6 md:pb-lg rounded shadow-md group-hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                            <div class="aspect-square overflow-hidden bg-surface-dim mb-sm">
+                                <img alt="Desert Roads"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    src="/images/pulong.png" />
+                            </div>
+                            <p
+                                class="font-label-md text-xs md:text-label-md italic text-center text-secondary truncate px-xs">
+                                LC, GC Confess</p>
+                        </div>
+                    </div>
+                    <div class="fade-in-on-scroll polaroid-rotate-right group">
+                        <div
+                            class="bg-white p-2 md:p-sm pb-6 md:pb-lg rounded shadow-md group-hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                            <div class="aspect-square overflow-hidden bg-surface-dim mb-sm">
+                                <img alt="Beach Laughs"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    src="/images/chubbylito.png" />
+                            </div>
+                            <p
+                                class="font-label-md text-xs md:text-label-md italic text-center text-secondary truncate px-xs">
+                                chubbylito</p>
+                        </div>
+                    </div>
+                    <div class="fade-in-on-scroll group">
+                        <div
+                            class="bg-white p-2 md:p-sm pb-6 md:pb-lg rounded shadow-md group-hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                            <div class="aspect-square overflow-hidden bg-surface-dim mb-sm">
+                                <img alt="Summer Swirls"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    src="/images/happymic.png" />
+                            </div>
+                            <p
+                                class="font-label-md text-xs md:text-label-md italic text-center text-secondary truncate px-xs">
+                                Ayawww bye byeeeee</p>
+                        </div>
+                    </div>
+                    <div class="fade-in-on-scroll polaroid-rotate-left group">
+                        <div
+                            class="bg-white p-2 md:p-sm pb-6 md:pb-lg rounded shadow-md group-hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                            <div class="aspect-square overflow-hidden bg-surface-dim mb-sm">
+                                <img alt="Rainy Day Hues"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    src="/images/baptismpic.png" />
+                            </div>
+                            <p
+                                class="font-label-md text-xs md:text-label-md italic text-center text-secondary truncate px-xs">
+                                NESCAFE Mocha Kiss</p>
+                        </div>
+                    </div>
+                    <div class="fade-in-on-scroll group">
+                        <div
+                            class="bg-white p-2 md:p-sm pb-6 md:pb-lg rounded shadow-md group-hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                            <div class="aspect-square overflow-hidden bg-surface-dim mb-sm">
+                                <img alt="Sun-Drenched Bloom"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    src="/images/withLola.jpg" />
+                            </div>
+                            <p
+                                class="font-label-md text-xs md:text-label-md italic text-center text-secondary truncate px-xs">
+                                Lola natin🥰</p>
+                        </div>
+                    </div>
+                    <div class="fade-in-on-scroll polaroid-rotate-right group">
+                        <div
+                            class="bg-white p-2 md:p-sm pb-6 md:pb-lg rounded shadow-md group-hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                            <div class="aspect-square overflow-hidden bg-surface-dim mb-sm">
+                                <img alt="Captured Time"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    src="/images/sisig.png" />
+                            </div>
+                            <p
+                                class="font-label-md text-xs md:text-label-md italic text-center text-secondary truncate px-xs">
+                                7:11 Sisig</p>
+                        </div>
+                    </div>
+                    <div class="fade-in-on-scroll group">
+                        <div
+                            class="bg-white p-2 md:p-sm pb-6 md:pb-lg rounded shadow-md group-hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                            <div class="aspect-square overflow-hidden bg-surface-dim mb-sm">
+                                <img alt="Meadow Picnic"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    src="/images/night.png" />
+                            </div>
+                            <p
+                                class="font-label-md text-xs md:text-label-md italic text-center text-secondary truncate px-xs">
+                                Sasampalin ka?😅</p>
+                        </div>
+                    </div>
+                    <div class="fade-in-on-scroll polaroid-rotate-left group">
+                        <div
+                            class="bg-white p-2 md:p-sm pb-6 md:pb-lg rounded shadow-md group-hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                            <div class="aspect-square overflow-hidden bg-surface-dim mb-sm">
+                                <img alt="Sweet Zest"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    src="/images/16.jpeg" />
+                            </div>
+                            <p
+                                class="font-label-md text-xs md:text-label-md italic text-center text-secondary truncate px-xs">
+                                Matcha Pumpum😍🥰</p>
+                        </div>
+                    </div>
+                    <div class="fade-in-on-scroll group">
+                        <div
+                            class="bg-white p-2 md:p-sm pb-6 md:pb-lg rounded shadow-md group-hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                            <div class="aspect-square overflow-hidden bg-surface-dim mb-sm">
+                                <img alt="Written Love"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    src="/images/7_11hug.jpg" />
+                            </div>
+                            <p
+                                class="font-label-md text-xs md:text-label-md italic text-center text-secondary truncate px-xs">
+                                MAY 16 Bite bite😽</p>
+                        </div>
+                    </div>
+                    <div class="fade-in-on-scroll polaroid-rotate-right group">
+                        <div
+                            class="bg-white p-2 md:p-sm pb-6 md:pb-lg rounded shadow-md group-hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                            <div class="aspect-square overflow-hidden bg-surface-dim mb-sm">
+                                <img alt="Quiet Nook"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    src="/images/cafefloat.jpg" />
+                            </div>
+                            <p
+                                class="font-label-md text-xs md:text-label-md italic text-center text-secondary truncate px-xs">
+                                Painggit yarn?😅</p>
+                        </div>
+                    </div>
+                    <div class="fade-in-on-scroll group">
+                        <div
+                            class="bg-white p-2 md:p-sm pb-6 md:pb-lg rounded shadow-md group-hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                            <div class="aspect-square overflow-hidden bg-surface-dim mb-sm">
+                                <img alt="Beach Days"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    src="/images/cookies.jpg" />
+                            </div>
+                            <p
+                                class="font-label-md text-xs md:text-label-md italic text-center text-secondary truncate px-xs">
+                                WHAAAAAA🤤</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+        <!-- Timeline Section -->
+        <section class="py-lg md:py-xl max-w-container-max mx-auto px-gutter" id="timeline">
+            <div class="text-center mb-lg md:mb-xl fade-in-on-scroll">
+                <h2 class="font-headline-md text-headline-md text-on-surface">Our Journey</h2>
+                <div class="w-24 h-px bg-primary mx-auto mt-md"></div>
+            </div>
+            <div class="relative">
+                <!-- Timeline Path -->
+                <div class="absolute left-1/2 -translate-x-1/2 h-full w-px bg-outline-variant timeline-line"></div>
+                <div class="space-y-lg md:space-y-xl relative">
+                    <!-- Milestone 1 -->
+                    <div
+                        class="relative flex items-start md:items-center justify-between md:justify-normal md:odd:flex-row-reverse group fade-in-on-scroll">
+                        <div class="flex-1 hidden md:block"></div>
+                        <div
+                            class="z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container shadow-sm group-hover:scale-125 transition-transform duration-300 mx-4 md:mx-gutter timeline-dot shrink-0">
+                            <span class="font-label-md text-sm md:text-base font-bold">KH</span>
+                        </div>
+                        <div
+                            class="flex-1 bg-surface-container-lowest p-md rounded-memory shadow-sm border border-surface-container timeline-content">
+                            <h3 class="font-headline-sm text-lg md:text-headline-sm text-primary">The Day We Met</h3>
+                            <p class="text-secondary font-label-md text-xs md:text-label-md mb-xs">KH renovation</p>
+                            <p class="text-on-surface-variant text-sm md:text-base">For three days, we stayed beneath the same roof, yet only then did you truly see and know me.   
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Milestone 2 -->
+                    <div
+                        class="relative flex items-start md:items-center justify-between md:justify-normal md:even:flex-row-reverse group fade-in-on-scroll">
+                        <div class="flex-1 hidden md:block"></div>
+                        <div
+                            class="z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container shadow-sm group-hover:scale-125 transition-transform duration-300 mx-4 md:mx-gutter timeline-dot shrink-0">
+                            <span class="material-symbols-outlined text-sm md:text-base"
+                                style="font-variation-settings: 'FILL' 1;">explore</span>
+                        </div>
+                        <div
+                            class="flex-1 bg-surface-container-lowest p-md rounded-memory shadow-sm border border-surface-container timeline-content">
+                            <h3 class="font-headline-sm text-lg md:text-headline-sm text-primary">Spring Adventures</h3>
+                            <p class="text-secondary font-label-md text-xs md:text-label-md mb-xs">April 16, 2026</p>
+                            <p class="text-on-surface-variant text-sm md:text-base">From the cold stillness of winter to the warmth of spring, our bond began to grow.</p>
+                        </div>
+                    </div>
+                    <!-- Milestone 3 -->
+                    <div
+                        class="relative flex items-start md:items-center justify-between md:justify-normal md:odd:flex-row-reverse group fade-in-on-scroll">
+                        <div class="flex-1 hidden md:block"></div>
+                        <div
+                            class="z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed shadow-sm group-hover:scale-125 transition-transform duration-300 mx-4 md:mx-gutter timeline-dot shrink-0">
+                            <span class="material-symbols-outlined text-sm md:text-base"
+                                style="font-variation-settings: 'FILL' 1;">favorite</span>
+                        </div>
+                        <div
+                            class="flex-1 bg-surface-container-lowest p-md rounded-memory shadow-sm border border-surface-container timeline-content">
+                            <h3 class="font-headline-sm text-lg md:text-headline-sm text-primary">A Golden Future</h3>
+                            <p class="text-secondary font-label-md text-xs md:text-label-md mb-xs">Present &amp; Beyond
+                            </p>
+                            <p class="text-on-surface-variant text-sm md:text-base">The comfort of waking up next to you, our morning conversations, and your sweet good mornings warm and comforting like a cup of hot coffee make me feel that we're exactly where we're meant to be.  <br><br>
+                            I hope that together we continue to make Jehovah happy and remain faithful to Him. I pray that we reach our goals side by side, and that Jehovah blesses our efforts and answers the prayers we hold close to our hearts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-surface-container-low w-full py-lg md:py-xl border-t border-outline-variant/30">
+        <div class="flex flex-col items-center justify-center gap-md text-center px-4">
+            <span class="font-headline-sm text-headline-sm text-secondary">Hearty💛</span>
+            <p class="font-body-md text-sm md:text-body-md text-on-surface-variant max-w-xs">Coding with love for the
+                woman who owns my heart.</p>
+            <p class="font-body-md text-primary font-bold italic">Thank you for being my light ✨</p>
+            <div class="flex gap-lg mt-md">
+                <a class="text-on-surface-variant hover:text-primary underline underline-offset-4 font-label-md text-xs md:text-label-md transition-all duration-200"
+                    href="#">Privacy</a>
+                <a class="text-on-surface-variant hover:text-primary underline underline-offset-4 font-label-md text-xs md:text-label-md transition-all duration-200"
+                    href="#">Our Story</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-on-scroll').forEach(el => observer.observe(el));
+
+        // Floating Particles Micro-interaction (Hearts + Specific Flowers)
+        const particleContainer = document.getElementById('particle-container');
+        const heartColors = ['#d4af37', '#e9c349', '#ffe088']; // Golden/Yellow palette
+
+        const flowerImages = [
+            { src: "/images/alpine-forget-me-not.png", weight: 6, sizeMult: 1.3, type: 'Yellow Gumamela' },
+            { src: "/images/bouquet.png", weight: 6, sizeMult: 1.3, type: 'Gumamela Pink Center' },
+            { src: "/images/gerbera (1).png", weight: 3, sizeMult: 1.2, type: 'Gerbera' },
+            { src: "/images/flower.png", weight: 3, sizeMult: 0.9, type: 'Forget-me-not' },
+            { src: "/images/sunflower-svgrepo-com.svg", weight: 3, sizeMult: 1.1, type: 'Sunflower' },
+            { src: "/images/tulip-svgrepo-com.svg", weight: 3, sizeMult: 1.0, type: 'Tulip' }
+        ];
+
+        const flowerPool = [];
+        flowerImages.forEach(f => {
+            for (let i = 0; i < f.weight; i++) flowerPool.push(f);
+        });
+
+        function createParticle() {
+            const isHeart = Math.random() > 0.6;
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+
+            const left = Math.random() * 100;
+            const duration = Math.random() * 8 + 12; // Adjusted for mobile smoothness
+
+            if (isHeart) {
+                particle.innerHTML = `<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>`;
+                const size = Math.random() * 14 + 10;
+                const color = heartColors[Math.floor(Math.random() * heartColors.length)];
+                particle.style.fontSize = `${size}px`;
+                particle.style.color = color;
+            } else {
+                const flower = flowerPool[Math.floor(Math.random() * flowerPool.length)];
+                const baseSize = window.innerWidth < 768 ? 15 : 25;
+                const size = (Math.random() * baseSize + baseSize) * flower.sizeMult;
+                particle.innerHTML = `<img src="${flower.src}" style="width: ${size}px; height: auto; opacity: 0.75;">`;
+            }
+
+            particle.style.left = `${left}%`;
+            particle.style.top = '110%';
+            particle.style.animationDuration = `${duration}s`;
+
+            particleContainer.appendChild(particle);
+
+            setTimeout(() => {
+                particle.remove();
+            }, duration * 1000);
+        }
+
+        // Dynamic spawn rate based on screen size to prevent clutter
+        const spawnRate = window.innerWidth < 768 ? 1800 : 1200;
+        setInterval(createParticle, spawnRate);
+        for (let i = 0; i < 10; i++) setTimeout(createParticle, i * 500);
+
+        // Navbar active state
+        window.addEventListener('scroll', () => {
+            const sections = ['letter', 'memories', 'timeline'];
+            let current = '';
+            sections.forEach(section => {
+                const element = document.getElementById(section);
+                if (element && window.scrollY >= (element.offsetTop - 150)) {
+                    current = section;
+                }
+            });
+
+            document.querySelectorAll('nav a').forEach(a => {
+                a.classList.remove('text-primary', 'border-b-2', 'border-primary', 'pb-1');
+                a.classList.add('text-on-surface-variant');
+                if (a.getAttribute('href').includes(current)) {
+                    a.classList.remove('text-on-surface-variant');
+                    a.classList.add('text-primary', 'border-b-2', 'border-primary', 'pb-1');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
